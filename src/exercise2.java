@@ -12,10 +12,10 @@ public class Exercise2 {
         double integerMod = (double) integer / 2;
 
         if (integerMod % 1 == 0) {
-            System.out.print("\n" + "Even.");
+            System.out.println("\n" + "Even.");
         }
         else {
-            System.out.print("\n" + "Odd.");
+            System.out.println("\n" + "Odd.");
         }
     }
 }
