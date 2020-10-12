@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class exercise3 {
+public class Exercise3 {
     public static void main(String[] args) {
         System.out.println("Enter three integers.");
 
@@ -15,6 +15,23 @@ public class exercise3 {
 
         in.close();
 
-        
+        if (integer1 < integer2 && integer2 < integer3) {
+            System.out.println("\n" + "Strictly increasing.");
+        }
+        else if (integer1 == integer2 && integer2 == integer3) {
+            System.out.println("\n" + "Same.");
+        }
+        else if (integer1 <= integer2 && integer2 <= integer3) {
+            System.out.println("\n" + "Increasing.");
+        }
+        else if (integer1 >= integer2 && integer2 >= integer3) {
+            System.out.println("\n" + "Decreasing.");
+        }
+        else if (integer1 > integer2 && integer2 > integer3) {
+            System.out.println("\n" + "Strictly decreasing.");
+        }
+        else {
+            System.out.println("\n" + "Unordered.");
+        }
     }
 }
