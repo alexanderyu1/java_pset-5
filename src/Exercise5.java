@@ -13,11 +13,11 @@ public class Exercise5 {
 
         if (grade >= 100) {
             status = 1;
-            System.out.println("Grades above 100 are invalid.");
+            System.out.println("\nGrades above 100 are invalid.");
         }
         else if (grade < 0) {
             status = 1;
-            System.out.println("Grades below 0 are invalid.");
+            System.out.println("\nGrades below 0 are invalid.");
         }
 
         String letterGrade = "error";

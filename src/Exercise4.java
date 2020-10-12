@@ -5,10 +5,13 @@ public class Exercise4 {
         Scanner in = new Scanner(System.in);
 
         System.out.print("Enter a letter grade: ");
-        String letterGrade = in.next().toUpperCase();
+        String letterGrade = in.nextLine().toUpperCase();
 
         in.close();
 
+        letterGrade = letterGrade.replaceAll(" ", "");
+
+        int letterGradeStringLength = letterGrade.length();
         double numberGrade = 0;
         int status = 0; //if status is 1, then don't print GPA, only print error message
 
@@ -17,7 +20,11 @@ public class Exercise4 {
             System.out.println("\n" + "That's not a valid letter grade.");
         }
 
-        if (letterGrade.contains("+")) {
+        if (letterGradeStringLength > 2) {
+            status = 1;
+            System.out.println("\n" + "That's not a valid letter grade.");
+        }
+        else if (letterGrade.contains("+")) {
             numberGrade += 0.33;
         }
         else if (letterGrade.contains("-")) {
