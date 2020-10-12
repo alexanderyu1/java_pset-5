@@ -9,73 +9,86 @@ public class Exercise6 {
 
         in.close();
 
+        int cardLength = card.length();
+        int statusOfSuit = 0;
+        int statusOfRank = 0;
+
+        String cardFirstCharacter = card.substring(0, 1);
+        String cardSecondCharacter = card.substring(1);
+
         String suit = "error";
         String rank = "error";
 
         //if statements for suits
-        if (card.contains("C")) {
+        if (cardSecondCharacter.contains("C")) {
             suit = "Clubs";
         }
-        else if (card.contains("D")) {
+        else if (cardSecondCharacter.contains("D")) {
             suit = "Diamonds";
         }
-        else if (card.contains("H")) {
+        else if (cardSecondCharacter.contains("H")) {
             suit = "Hearts";
         }
-        else if (card.contains("S")) {
+        else if (cardSecondCharacter.contains("S")) {
             suit = "Spades";
+        }
+        else {
+            statusOfSuit += 1;
         }
 
         //if statements for rank
-        if (card.contains("2")) {
+        if (cardFirstCharacter.contains("2")) {
             rank = "Two";
         }
-        else if (card.contains("3")) {
+        else if (cardFirstCharacter.contains("3")) {
             rank = "Three";
         }
-        else if (card.contains("4")) {
+        else if (cardFirstCharacter.contains("4")) {
             rank = "Four";
         }
-        else if (card.contains("5")) {
+        else if (cardFirstCharacter.contains("5")) {
             rank = "Five";
         }
-        else if (card.contains("6")) {
+        else if (cardFirstCharacter.contains("6")) {
             rank = "Six";
         }
-        else if (card.contains("7")) {
+        else if (cardFirstCharacter.contains("7")) {
             rank = "Seven";
         }
-        else if (card.contains("8")) {
+        else if (cardFirstCharacter.contains("8")) {
             rank = "Eight";
         }
-        else if (card.contains("9")) {
+        else if (cardFirstCharacter.contains("9")) {
             rank = "Nine";
         }
-        else if (card.contains("T")) {
+        else if (cardFirstCharacter.contains("T")) {
             rank = "Ten";
         }
-        else if (card.contains("J")) {
+        else if (cardFirstCharacter.contains("J")) {
             rank = "Jack";
         }
-        else if (card.contains("Q")) {
+        else if (cardFirstCharacter.contains("Q")) {
             rank = "Queen";
         }
-        else if (card.contains("K")) {
+        else if (cardFirstCharacter.contains("K")) {
             rank = "King";
         }
-        else if (card.contains("A")) {
+        else if (cardFirstCharacter.contains("A")) {
             rank = "Ace";
+        }
+        else {
+            statusOfRank += 1;
         }
 
         //if statements for error messages
-        if (suit.equals("error") && rank.equals("error")) {
+        if (cardLength > 2) {
             System.out.println("\nThat's not a valid card.");
         }
-        else if (suit.equals("error")) {
-            System.out.println("\nThat's not a valid suit.");
+        else if (statusOfRank != 0) {
+            System.out.println("\nThat's not a rank.");
         }
-        else if (rank.equals("error")) {
-            System.out.println("\nThat's not a valid rank.");
+        else if (statusOfSuit != 0) {
+            System.out.println("\nThat's not a suit.");
         }
         else {
             System.out.println("\n" + rank + " of " + suit + ".");
